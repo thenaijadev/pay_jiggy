@@ -13,25 +13,28 @@ class SkipButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        TextButton(
-          onPressed: () {
-            _pageController.animateToPage(
-                duration: const Duration(milliseconds: 300),
-                3,
-                curve: Curves.easeIn);
-          },
-          child: TextWidget(
-            text: "Skip",
-            textAlign: TextAlign.center,
-            color: theme.primary,
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
-          ),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 30.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          TextButton(
+            onPressed: () {
+              _pageController.animateToPage(
+                  duration: const Duration(milliseconds: 300),
+                  3,
+                  curve: Curves.easeIn);
+            },
+            child: TextWidget(
+              text: "Skip",
+              textAlign: TextAlign.center,
+              color: theme.primary,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

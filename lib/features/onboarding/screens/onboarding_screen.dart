@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:pay_jiggy/features/onboarding/widgets/indicator_widget.dart';
 import 'package:pay_jiggy/features/onboarding/widgets/page_slide.dart';
 import 'package:pay_jiggy/features/onboarding/widgets/skip_button.dart';
@@ -29,7 +28,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Image.asset("assets/images/curve.png"),
           ListView(
             children: [
-              const Gap(30),
               SkipButton(pageController: _pageController, theme: theme),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.80,
