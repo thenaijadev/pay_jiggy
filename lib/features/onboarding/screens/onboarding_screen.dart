@@ -27,12 +27,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: Stack(
         children: [
           Image.asset("assets/images/curve.png"),
-          Column(
+          ListView(
             children: [
               const Gap(30),
               SkipButton(pageController: _pageController, theme: theme),
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.82,
+                height: MediaQuery.of(context).size.height * 0.80,
                 child: PageView(
                   controller: _pageController,
                   children: const [

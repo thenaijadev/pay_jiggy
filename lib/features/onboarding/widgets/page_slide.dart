@@ -14,13 +14,12 @@ class PageSlide extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           Image.asset(
             imagePath,
             width: double.infinity,
-            height: 370,
+            height: 364,
           ),
           const SizedBox(
             height: 150,
