@@ -46,7 +46,7 @@ class InputFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 15),
+      padding: const EdgeInsets.only(left: 16, right: 16, top: 0),
       child: SizedBox(
         width: double.infinity,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -70,10 +70,13 @@ class InputFieldWidget extends StatelessWidget {
             obscureText: obscureText,
             decoration: InputDecoration(
               prefixIcon: prefixicon,
+              filled: true,
+              fillColor: Colors.white,
               suffixIcon: suffixIcon,
               hintStyle: TextStyle(
                   color: hintColor,
                   fontSize: hintSize,
+                  fontWeight: FontWeight.w300,
                   fontFamily: 'Neue Plak'),
               contentPadding: EdgeInsets.symmetric(
                   horizontal: 24, vertical: verticalContentPadding),
@@ -93,8 +96,8 @@ class InputFieldWidget extends StatelessWidget {
               ),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(
-                  color: Theme.of(context).colorScheme.inversePrimary,
+                borderSide: const BorderSide(
+                  color: Colors.black,
                   width: 2.0,
                 ),
               ),

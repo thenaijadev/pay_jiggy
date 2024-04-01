@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 
 class NextButton extends StatelessWidget {
@@ -13,6 +14,9 @@ class NextButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () {
+          if (_pageController.page! == 2) {
+            Navigator.pushReplacementNamed(context, Routes.login);
+          }
           _pageController.nextPage(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeIn);

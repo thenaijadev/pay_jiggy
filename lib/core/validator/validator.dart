@@ -12,11 +12,11 @@ class Validator {
 
   static String? validateText(String? value, String? label) {
     if (value == null || value.isEmpty) {
-      return '$label cannot be empty';
+      return 'Your $label cannot be empty';
     } else if (value.length < 3) {
-      return "Your name is too short";
+      return "Your $label is too short";
     } else if (value.contains(" ")) {
-      return "$label cannot contain spaces";
+      return "Your $label cannot contain spaces";
     }
     return null;
   }

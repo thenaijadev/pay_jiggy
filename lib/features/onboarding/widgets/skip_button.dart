@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 
 class SkipButton extends StatelessWidget {
@@ -18,10 +19,11 @@ class SkipButton extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            _pageController.animateToPage(
-                duration: const Duration(milliseconds: 300),
-                3,
-                curve: Curves.easeIn);
+            // _pageController.animateToPage(
+            //     duration: const Duration(milliseconds: 300),
+            //     3,
+            //     curve: Curves.easeIn);
+            Navigator.pushReplacementNamed(context, Routes.login);
           },
           child: TextWidget(
             text: "Skip",

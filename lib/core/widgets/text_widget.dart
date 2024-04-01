@@ -12,7 +12,8 @@ class TextWidget extends StatelessWidget {
       this.color = AppColors.black,
       this.textAlign,
       this.overflow,
-      this.onTap});
+      this.onTap,
+      this.letterSpacing});
   final String text;
   final double fontSize;
   final FontWeight fontWeight;
@@ -20,6 +21,7 @@ class TextWidget extends StatelessWidget {
   final Color color;
   final TextAlign? textAlign;
   final TextOverflow? overflow;
+  final double? letterSpacing;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -29,7 +31,10 @@ class TextWidget extends StatelessWidget {
         textAlign: textAlign,
         overflow: overflow,
         style: GoogleFonts.ibmPlexSans(
-            color: color, fontSize: fontSize, fontWeight: fontWeight),
+            color: color,
+            fontSize: fontSize,
+            fontWeight: fontWeight,
+            letterSpacing: letterSpacing),
       ),
     );
   }
