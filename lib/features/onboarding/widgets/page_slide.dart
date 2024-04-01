@@ -19,7 +19,7 @@ class PageSlide extends StatelessWidget {
           Image.asset(
             imagePath,
             width: double.infinity,
-            height: 364,
+            height: 360,
           ),
           const SizedBox(
             height: 150,
