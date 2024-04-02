@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/validator/validator.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/auth/presentation/widgets/input_field_widget.dart';
+import 'package:pay_jiggy/features/auth/presentation/widgets/login_button.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -127,6 +128,39 @@ class _LoginFormState extends State<LoginForm> {
                   return passwordState;
                 },
                 textFieldkey: passwordKey),
+            Padding(
+              padding: const EdgeInsets.only(top: 10.0, bottom: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () {},
+                      child: const TextWidget(
+                        text: "Forgot password?",
+                        fontSize: 14,
+                      ))
+                ],
+              ),
+            ),
+            LoginButton(
+              onPressed: () {},
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const TextWidget(text: "Don't have an account? "),
+                  GestureDetector(
+                    onTap: () {},
+                    child: const TextWidget(
+                      text: "Sign up.",
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

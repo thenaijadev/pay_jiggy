@@ -45,21 +45,32 @@ class InputFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 16, right: 16, top: 0),
-      child: SizedBox(
-        width: double.infinity,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Padding(
-            padding: padding,
-            child: TextWidget(
-              text: label,
-              color: Theme.of(context).colorScheme.inversePrimary,
-              fontWeight: fontWeight,
-              fontSize: labelFontSize,
-            ),
+    return SizedBox(
+      width: double.infinity,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+          padding: padding,
+          child: TextWidget(
+            text: label,
+            color: Theme.of(context).colorScheme.inversePrimary,
+            fontWeight: fontWeight,
+            fontSize: labelFontSize,
           ),
-          TextFormField(
+        ),
+        Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4.0), // Adjust as needed
+            boxShadow: [
+              BoxShadow(
+                color: const Color.fromARGB(255, 35, 35, 35)
+                    .withOpacity(0.3), // Adjust color and opacity
+                spreadRadius: 0.0, // Adjust blur radius
+                blurRadius: 5.0, // Adjust shadow spread
+                offset: const Offset(1, 2), // Adjust shadow position
+              )
+            ],
+          ),
+          child: TextFormField(
             controller: controller,
             onTap: onTap,
             key: textFieldkey,
@@ -109,8 +120,8 @@ class InputFieldWidget extends StatelessWidget {
               hintText: hintText,
             ),
           ),
-        ]),
-      ),
+        ),
+      ]),
     );
   }
 }
