@@ -1,6 +1,6 @@
 class Routes {
   static const String landing = '/onboarding';
-  // static const String register = '/registeration';
+  static const String signUp = '/signUp';
   static const String login = '/login';
   // static const String forgotPassword = '/forgotPassword';
   // static const String emailSent = '/emailSent';

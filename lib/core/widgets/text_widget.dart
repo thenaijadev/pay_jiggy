@@ -7,12 +7,13 @@ class TextWidget extends StatelessWidget {
   const TextWidget(
       {super.key,
       required this.text,
-      this.fontSize = 16,
+      this.fontSize = 14,
       this.fontWeight = FontWeight.normal,
       this.color = AppColors.black,
       this.textAlign,
       this.overflow,
       this.onTap,
+      this.textDecoration,
       this.letterSpacing});
   final String text;
   final double fontSize;
@@ -22,6 +23,7 @@ class TextWidget extends StatelessWidget {
   final TextAlign? textAlign;
   final TextOverflow? overflow;
   final double? letterSpacing;
+  final TextDecoration? textDecoration;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -32,6 +34,7 @@ class TextWidget extends StatelessWidget {
         overflow: overflow,
         style: GoogleFonts.ibmPlexSans(
             color: color,
+            decoration: textDecoration,
             fontSize: fontSize,
             fontWeight: fontWeight,
             letterSpacing: letterSpacing),

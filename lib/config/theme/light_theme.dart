@@ -15,11 +15,5 @@ ThemeData lightTheme() {
     textTheme: ThemeData.light()
         .textTheme
         .apply(bodyColor: Colors.grey[800], displayColor: Colors.black),
-    // appBarTheme: const AppBarTheme(
-    //     backgroundColor: Colors.white,
-    //     elevation: 0,
-    //     centerTitle: true,
-    //     iconTheme: IconThemeData(color: Colors.grey),
-    //     titleTextStyle: TextStyle(color: Colors.grey, fontSize: 18)),
   );
 }
