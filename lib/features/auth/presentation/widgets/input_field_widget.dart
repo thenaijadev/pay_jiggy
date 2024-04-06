@@ -21,7 +21,7 @@ class InputFieldWidget extends StatelessWidget {
       this.fontWeight = FontWeight.w600,
       this.labelFontSize = 16,
       this.enabledBorderRadius = 30,
-      this.verticalContentPadding = 20,
+      this.verticalContentPadding = 0,
       this.controller});
   final String label;
   final String hintText;
@@ -52,7 +52,7 @@ class InputFieldWidget extends StatelessWidget {
           padding: padding,
           child: TextWidget(
             text: label,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            color: Colors.black,
             fontWeight: fontWeight,
             fontSize: labelFontSize,
           ),

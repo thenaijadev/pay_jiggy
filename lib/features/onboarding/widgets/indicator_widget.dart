@@ -33,7 +33,11 @@ class IndicatorWidget extends StatelessWidget {
                     index,
                     curve: Curves.easeIn);
               }),
-          NextButton(pageController: _pageController)
+          ActionButton(
+            pageController: _pageController,
+            label: "Next",
+            onTap: () {},
+          )
         ],
       ),
     );
