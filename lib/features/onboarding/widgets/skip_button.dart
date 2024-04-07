@@ -19,10 +19,10 @@ class SkipButton extends StatelessWidget {
       children: [
         TextButton(
           onPressed: () {
-            // _pageController.animateToPage(
-            //     duration: const Duration(milliseconds: 300),
-            //     3,
-            //     curve: Curves.easeIn);
+            _pageController.animateToPage(
+                duration: const Duration(milliseconds: 300),
+                3,
+                curve: Curves.easeIn);
             Navigator.pushReplacementNamed(context, Routes.login);
           },
           child: TextWidget(

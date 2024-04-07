@@ -8,23 +8,21 @@ import 'package:pay_jiggy/features/onboarding/widgets/next_button_widget.dart';
 
 import '../../../../core/validator/validator.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({super.key});
+class PhoneNumberScreen extends StatefulWidget {
+  const PhoneNumberScreen({super.key});
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<PhoneNumberScreen> createState() => _PhoneNumberScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _PhoneNumberScreenState extends State<PhoneNumberScreen> {
   final formKey = GlobalKey<FormState>();
-  final formfieldkey_1 = GlobalKey<FormFieldState>();
-  final formfieldkey_2 = GlobalKey<FormFieldState>();
+
   final formfieldkey_3 = GlobalKey<FormFieldState>();
 
   String city = "";
   late TextEditingController cityController;
-  bool? emailState = false;
-  bool? addressState = false;
+
   bool enabled = false;
   bool obscureText = false;
   String? countryFlag = "🇳🇬";
@@ -131,8 +129,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   ActionButton(
                     onTap: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed(Routes.otpVerification);
+                      Navigator.of(context).pushNamed(Routes.otpVerification);
                     },
                     label: "Send OTP",
                   )

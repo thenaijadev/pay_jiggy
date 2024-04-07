@@ -19,7 +19,7 @@ class TrailingLoginFormWidgets extends StatelessWidget {
               const TextWidget(text: "Don't have an account? "),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, Routes.signUp);
+                  Navigator.pushNamed(context, Routes.phoneNumber);
                 },
                 child: const TextWidget(
                   text: "Sign up.",

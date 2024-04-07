@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/style.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/onboarding/widgets/next_button_widget.dart';
@@ -200,7 +201,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       ),
                       const TextWidget(
                         text: "  waiting time",
-                        color: Color(0xff868FAE),
+                        color: Colors.black,
                       )
                     ],
                   ),
@@ -212,7 +213,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    ActionButton(label: "Continue", onTap: () {}),
+                    ActionButton(
+                        label: "Continue",
+                        onTap: () {
+                          Navigator.pushNamed(context, Routes.signUp);
+                        }),
                   ],
                 ))
           ],

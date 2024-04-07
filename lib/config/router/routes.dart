@@ -1,8 +1,10 @@
 class Routes {
   static const String landing = '/onboarding';
-  static const String signUp = '/signUp';
+  static const String phoneNumber = '/phoneNumber';
   static const String login = '/login';
   static const String otpVerification = '/otpVerification';
+  static const String signUp = '/signUp';
+  static const String setPassword = '/setPassword';
 
   // static const String forgotPassword = '/forgotPassword';
   // static const String emailSent = '/emailSent';

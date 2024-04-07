@@ -22,7 +22,8 @@ class InputFieldWidget extends StatelessWidget {
       this.labelFontSize = 16,
       this.enabledBorderRadius = 30,
       this.verticalContentPadding = 0,
-      this.controller});
+      this.controller,
+      this.horizontalContentPadding = 25});
   final String label;
   final String hintText;
   final double hintSize;
@@ -43,6 +44,7 @@ class InputFieldWidget extends StatelessWidget {
   final Color hintColor;
   final double labelFontSize;
   final TextEditingController? controller;
+  final double horizontalContentPadding;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -63,10 +65,10 @@ class InputFieldWidget extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: const Color.fromARGB(255, 35, 35, 35)
-                    .withOpacity(0.3), // Adjust color and opacity
+                    .withOpacity(0.14), // Adjust color and opacity
                 spreadRadius: 0.0, // Adjust blur radius
                 blurRadius: 5.0, // Adjust shadow spread
-                offset: const Offset(1, 2), // Adjust shadow position
+                offset: const Offset(1, 1), // Adjust shadow position
               )
             ],
           ),
@@ -90,7 +92,8 @@ class InputFieldWidget extends StatelessWidget {
                   fontWeight: FontWeight.w300,
                   fontFamily: 'Neue Plak'),
               contentPadding: EdgeInsets.symmetric(
-                  horizontal: 24, vertical: verticalContentPadding),
+                  horizontal: horizontalContentPadding,
+                  vertical: verticalContentPadding),
               errorBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(
