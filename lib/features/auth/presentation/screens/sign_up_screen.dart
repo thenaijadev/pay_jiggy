@@ -179,7 +179,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           },
                           child: TextWidget(
                               color: AppColors.orange,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w600,
                               fontSize: 25,
                               text: selectedDate.toString().split(" ")[0]),
                         ))

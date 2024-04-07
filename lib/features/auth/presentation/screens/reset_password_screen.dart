@@ -5,14 +5,14 @@ import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/auth/presentation/widgets/input_field_widget.dart';
 import 'package:pay_jiggy/features/onboarding/widgets/next_button_widget.dart';
 
-class SetPasswordScreen extends StatefulWidget {
-  const SetPasswordScreen({super.key});
+class ResetPasswordScreen extends StatefulWidget {
+  const ResetPasswordScreen({super.key});
 
   @override
-  State<SetPasswordScreen> createState() => _SetPasswordScreenState();
+  State<ResetPasswordScreen> createState() => _ResetPasswordScreenState();
 }
 
-class _SetPasswordScreenState extends State<SetPasswordScreen> {
+class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
   final formKey = GlobalKey<FormState>();
   late GlobalKey<FormFieldState> emailKey;
   late GlobalKey<FormFieldState> passwordKey;

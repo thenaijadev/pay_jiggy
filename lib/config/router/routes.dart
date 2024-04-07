@@ -5,6 +5,16 @@ class Routes {
   static const String otpVerification = '/otpVerification';
   static const String signUp = '/signUp';
   static const String setPassword = '/setPassword';
+  static const String accountCreated = '/accountCreated';
+  static const String createPin = '/createPin';
+  static const String biometricsSetUp = '/biometricsSetUp';
+  static const String forgotPassword = '/forgotPassword';
+  static const String forgotPasswordEmail = '/forgotPasswordEmail';
+  static const String forgotPasswordOtpVerification =
+      '/forgotPasswordOtpVerification';
+
+  static const String forgotPasswordPhoneNumber = '/forgotPasswordPhoneNumber';
+  static const String changePassword = '/changePassword';
 
   // static const String forgotPassword = '/forgotPassword';
   // static const String emailSent = '/emailSent';

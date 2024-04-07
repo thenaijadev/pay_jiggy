@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/validator/validator.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/auth/presentation/widgets/input_field_widget.dart';
@@ -94,7 +95,7 @@ class _LoginFormState extends State<LoginForm> {
                 ),
                 onChanged: (val) {
                   setState(() {
-                    passwordIsValid = nameKey.currentState?.validate();
+                    passwordIsValid = passwordKey.currentState?.validate();
                   });
                 },
                 validator: (p0) {
@@ -110,7 +111,9 @@ class _LoginFormState extends State<LoginForm> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, Routes.forgotPassword);
+                      },
                       child: const TextWidget(
                         text: "Forgot password?",
                         fontSize: 14,
@@ -121,7 +124,7 @@ class _LoginFormState extends State<LoginForm> {
             LoginButton(
               onPressed: () {},
             ),
-            TrailingLoginFormWidgets()
+            const TrailingLoginFormWidgets()
           ],
         ),
       ),
