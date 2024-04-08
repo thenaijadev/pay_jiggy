@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/funds_details_card.dart';
+import 'package:pay_jiggy/features/home/presentation/widgets/horizontal_divider.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/screen_header.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/speed_dial_section_widget.dart';
 
@@ -34,6 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SpeedDialSection(
                 title: "Speed Dial",
               ),
+              HorizontalDivider()
             ],
           ),
         ),
