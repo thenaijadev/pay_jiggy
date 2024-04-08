@@ -18,7 +18,7 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   late GlobalKey<FormFieldState> nameKey;
   late GlobalKey<FormFieldState> passwordKey;
-  bool showPassword = false;
+  bool obscureText = true;
   bool? nameIsValid;
   bool? passwordIsValid;
 
@@ -76,18 +76,18 @@ class _LoginFormState extends State<LoginForm> {
                 textFieldkey: nameKey),
             InputFieldWidget(
                 enabledBorderRadius: 10,
-                obscureText: showPassword,
+                obscureText: obscureText,
                 verticalContentPadding: 0,
                 hintColor: const Color(0xff87898E),
                 suffixIcon: IconButton(
                     onPressed: () {
                       setState(() {
-                        showPassword = !showPassword;
+                        obscureText = !obscureText;
                       });
                     },
-                    icon: showPassword
-                        ? const Icon(Icons.visibility_off)
-                        : const Icon(Icons.visibility)),
+                    icon: obscureText
+                        ? const Icon(Icons.visibility)
+                        : const Icon(Icons.visibility_off)),
                 hintText: "Enter your password",
                 prefixicon: const Icon(
                   Icons.lock_outline,
@@ -122,7 +122,9 @@ class _LoginFormState extends State<LoginForm> {
               ),
             ),
             LoginButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(Routes.home);
+              },
             ),
             const TrailingLoginFormWidgets()
           ],

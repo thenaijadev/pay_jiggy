@@ -14,6 +14,7 @@ import 'package:pay_jiggy/features/auth/presentation/screens/otp_verification_sc
 import 'package:pay_jiggy/features/auth/presentation/screens/phone_number_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/set_password_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
 
 class AppRouter {
@@ -74,6 +75,11 @@ class AppRouter {
       case Routes.changePassword:
         return MaterialPageRoute(
           builder: (_) => const ChangePasswordScreen(),
+        );
+
+      case Routes.home:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
         );
       default:
         return MaterialPageRoute(
