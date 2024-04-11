@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/lists.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/service_tile.dart';
+import 'package:pay_jiggy/features/services/presentation/widgets/service_tile.dart';
 
 class ServicesList extends StatelessWidget {
   const ServicesList({super.key});

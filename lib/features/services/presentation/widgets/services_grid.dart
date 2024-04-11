@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/lists.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/service_grid_item.dart';
+import 'package:pay_jiggy/features/services/presentation/widgets/service_grid_item.dart';
 
 class ServicesGrid extends StatelessWidget {
   const ServicesGrid({super.key});

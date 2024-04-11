@@ -19,7 +19,7 @@ class TextWidget extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final VoidCallback? onTap;
-  final Color color;
+  final Color? color;
   final TextAlign? textAlign;
   final TextOverflow? overflow;
   final double? letterSpacing;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/page_view_slide.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/service_tab_header.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/services_grid.dart';
+import 'package:pay_jiggy/features/services/presentation/widgets/service_tab_header.dart';
+import 'package:pay_jiggy/features/services/presentation/widgets/services_grid.dart';
 
 class ServicesTab extends StatefulWidget {
   const ServicesTab({super.key});

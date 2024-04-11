@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/services_tab.dart';
+import 'package:pay_jiggy/features/profile/presentation/screens/profile_tab.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/services_tab.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/wallet_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       const ServicesTab(),
       const HomeTab(),
       const WalletTab(),
-      const Placeholder()
+      const ProfileTab()
     ];
     return Scaffold(
       backgroundColor: Colors.white,
