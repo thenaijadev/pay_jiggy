@@ -8,8 +8,8 @@ import 'package:pay_jiggy/features/home/presentation/widgets/horizontal_divider.
 import 'package:pay_jiggy/features/home/presentation/widgets/screen_header.dart';
 
 class WalletTab extends StatefulWidget {
-  const WalletTab({super.key});
-
+  const WalletTab({super.key, required this.onMenuTap});
+  final VoidCallback onMenuTap;
   @override
   State<WalletTab> createState() => _WalletTabState();
 }
@@ -25,7 +25,9 @@ class _WalletTabState extends State<WalletTab> {
             const SizedBox(
               height: 20,
             ),
-            const ScreenHeader(),
+            ScreenHeader(
+              onTap: widget.onMenuTap,
+            ),
             const SizedBox(
               height: 20,
             ),

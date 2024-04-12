@@ -7,7 +7,8 @@ import 'package:pay_jiggy/features/home/presentation/widgets/speed_dial_section_
 import 'package:pay_jiggy/features/services/presentation/widgets/services_grid.dart';
 
 class HomeTab extends StatefulWidget {
-  const HomeTab({super.key});
+  const HomeTab({super.key, required this.onMenuTap});
+  final VoidCallback onMenuTap;
 
   @override
   State<HomeTab> createState() => _HomeTabState();
@@ -20,30 +21,32 @@ class _HomeTabState extends State<HomeTab> {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: ListView(
-          children: const [
-            SizedBox(
+          children: [
+            const SizedBox(
               height: 20,
             ),
-            ScreenHeader(),
-            SizedBox(
+            ScreenHeader(
+              onTap: widget.onMenuTap,
+            ),
+            const SizedBox(
               height: 30,
             ),
-            FundsDetailsCard(),
-            SizedBox(
+            const FundsDetailsCard(),
+            const SizedBox(
               height: 50,
             ),
-            SpeedDialSection(
+            const SpeedDialSection(
               title: "Speed Dial",
             ),
-            HorizontalDivider(),
-            TextWidget(
+            const HorizontalDivider(),
+            const TextWidget(
               text: "Services",
               fontWeight: FontWeight.bold,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            ServicesGrid(),
+            const ServicesGrid(),
           ],
         ),
       ),

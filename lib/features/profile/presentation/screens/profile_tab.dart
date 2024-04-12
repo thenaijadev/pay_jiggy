@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/notification/presentation/widgets/notification_widget.dart';
 import 'package:pay_jiggy/features/profile/presentation/widgets/profile_header.dart';
+import 'package:pay_jiggy/features/profile/presentation/widgets/profile_list.dart';
 
 class ProfileTab extends StatelessWidget {
   const ProfileTab({super.key});
@@ -22,41 +23,27 @@ class ProfileTab extends StatelessWidget {
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.arrow_back,
-                          size: 30,
+                        TextWidget(
+                          text: "Profile",
+                          textAlign: TextAlign.start,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
                         ),
-                        Row(
-                          children: [
-                            NotificationWidget(
-                              color: Colors.white,
-                              backgroundColor: Colors.white,
-                              numberColor: Colors.black,
-                            )
-                          ],
+                        NotificationWidget(
+                          color: Colors.white,
+                          backgroundColor: Colors.white,
+                          numberColor: Colors.black,
                         )
                       ],
                     ),
-                  ),
-                  const Row(
-                    children: [
-                      SizedBox(
-                        width: 20,
-                      ),
-                      TextWidget(
-                        text: "Profile",
-                        textAlign: TextAlign.start,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ],
                   ),
                   const ProfileHeader()
                 ],
               ),
             ),
           ],
-        )
+        ),
+        const ProfileList()
       ],
     );
   }
