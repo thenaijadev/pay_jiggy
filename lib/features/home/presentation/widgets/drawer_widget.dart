@@ -7,27 +7,79 @@ class DrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> drawerItems = [
-      {"onTap": () {}, "label": "Data", "icon": Icons.wifi},
-      {"onTap": () {}, "label": "Airtime", "icon": Icons.phone},
       {
         "onTap": () {},
-        "label": "Book Flight",
-        "icon": Icons.airplanemode_active_outlined
+        "label": "Wallet",
+        "icon": "assets/images/wallet_img.png"
+      },
+      {"onTap": () {}, "label": "Order", "icon": "assets/images/order_img.png"},
+      {
+        "onTap": () {},
+        "label": "Referrals",
+        "icon": "assets/images/referals_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "History",
+        "icon": "assets/images/history_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Share App",
+        "icon": "assets/images/share_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Settings",
+        "icon": "assets/images/settings_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Edit Profile",
+        "icon": "assets/images/edit_profile_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Logout",
+        "icon": "assets/images/logout_img.png"
       },
     ];
     return Container(
-      decoration: const BoxDecoration(
-        color: AppColors.orange,
-        borderRadius: BorderRadius.only(
-          topRight: Radius.circular(30),
-          bottomRight: Radius.circular(30),
+        height: 300,
+        decoration: const BoxDecoration(
+          color: AppColors.orange,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30),
+            bottomRight: Radius.circular(30),
+          ),
         ),
+        child: const Column(
+          children: [DrawerItem(image: "image")],
+        ));
+  }
+}
+
+class DrawerItem extends StatelessWidget {
+  const DrawerItem({super.key, required this.image});
+  final String image;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 30,
+      decoration: const BoxDecoration(color: Colors.amber),
+      child: Row(
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+              radius: 18,
+              child: Image.asset(
+                image,
+                width: 18,
+              ),
+            ),
+          )
+        ],
       ),
-      child: ListView.builder(
-          itemCount: drawerItems.length,
-          itemBuilder: (context, index) {
-            return null;
-          }),
     );
   }
 }

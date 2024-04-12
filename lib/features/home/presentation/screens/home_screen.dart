@@ -1,6 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/drawer_widget.dart';
+import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/wallet_tab.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/profile_tab.dart';
@@ -42,11 +43,96 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       const ProfileTab()
     ];
+    final List<Map<String, dynamic>> drawerItems = [
+      {
+        "onTap": () {},
+        "label": "Edit Profie",
+        "icon": "assets/images/profile_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Security settings",
+        "icon": "assets/images/security_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Privacy Policy",
+        "icon": "assets/images/privacy_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Help & Support",
+        "icon": "assets/images/help_img.png"
+      },
+      {
+        "onTap": () {},
+        "label": "Contact Us",
+        "icon": "assets/images/contact_img.png"
+      },
+      {"onTap": () {}, "label": "Logout", "icon": "assets/images/logout.png"},
+    ];
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const Padding(
-          padding: EdgeInsets.only(top: 150.0, right: 50),
-          child: DrawerWidget()),
+      drawer: Padding(
+        padding: const EdgeInsets.only(top: 150.0, right: 50),
+        child: Container(
+          decoration: const BoxDecoration(
+            color: AppColors.orange,
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30),
+              bottomRight: Radius.circular(30),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Column(
+              children: List.generate(drawerItems.length, (index) {
+                final item = drawerItems[index];
+                return Container(
+                  margin:
+                      const EdgeInsets.symmetric(vertical: 17, horizontal: 12),
+                  height: 72,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Row(
+                        children: [
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          CircleAvatar(
+                            backgroundColor:
+                                const Color.fromARGB(95, 255, 165, 54),
+                            child: Image.asset(
+                              item["icon"],
+                              width: 13,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          TextWidget(text: item["label"])
+                        ],
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(right: 15.0),
+                        child: Icon(
+                          CupertinoIcons.forward,
+                          color: Color(0xff999999),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ),
+          ),
+        ),
+      ),
       backgroundColor: Colors.white,
       body: tabs[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
