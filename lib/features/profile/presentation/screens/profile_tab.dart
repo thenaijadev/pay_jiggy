@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/core/widgets/text_widget.dart';
+import 'package:pay_jiggy/features/notification/presentation/widgets/notification_widget.dart';
 import 'package:pay_jiggy/features/profile/presentation/widgets/profile_header.dart';
 
 class ProfileTab extends StatelessWidget {
@@ -11,7 +13,48 @@ class ProfileTab extends StatelessWidget {
         Stack(
           children: [
             Image.asset("assets/images/curve_rectangle.png"),
-            const Center(child: ProfileHeader())
+            SafeArea(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0)
+                        .copyWith(top: 10),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Icon(
+                          Icons.arrow_back,
+                          size: 30,
+                        ),
+                        Row(
+                          children: [
+                            NotificationWidget(
+                              color: Colors.white,
+                              backgroundColor: Colors.white,
+                              numberColor: Colors.black,
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  const Row(
+                    children: [
+                      SizedBox(
+                        width: 20,
+                      ),
+                      TextWidget(
+                        text: "Profile",
+                        textAlign: TextAlign.start,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ],
+                  ),
+                  const ProfileHeader()
+                ],
+              ),
+            ),
           ],
         )
       ],
