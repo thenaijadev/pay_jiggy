@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
@@ -45,7 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
     ];
     final List<Map<String, dynamic>> drawerItems = [
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.editProfile);
+        },
         "label": "Edit Profie",
         "icon": "assets/images/profile_img.png"
       },
@@ -88,44 +91,47 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: List.generate(drawerItems.length, (index) {
                 final item = drawerItems[index];
-                return Container(
-                  margin:
-                      const EdgeInsets.symmetric(vertical: 17, horizontal: 12),
-                  height: 72,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.white,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          CircleAvatar(
-                            backgroundColor:
-                                const Color.fromARGB(95, 255, 165, 54),
-                            child: Image.asset(
-                              item["icon"],
-                              width: 13,
+                return GestureDetector(
+                  onTap: drawerItems[index]["onTap"],
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 17, horizontal: 12),
+                    height: 72,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            const SizedBox(
+                              width: 20,
                             ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          TextWidget(text: item["label"])
-                        ],
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(right: 15.0),
-                        child: Icon(
-                          CupertinoIcons.forward,
-                          color: Color(0xff999999),
+                            CircleAvatar(
+                              backgroundColor:
+                                  const Color.fromARGB(95, 255, 165, 54),
+                              child: Image.asset(
+                                item["icon"],
+                                width: 13,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 20,
+                            ),
+                            TextWidget(text: item["label"])
+                          ],
                         ),
-                      ),
-                    ],
+                        const Padding(
+                          padding: EdgeInsets.only(right: 15.0),
+                          child: Icon(
+                            CupertinoIcons.forward,
+                            color: Color(0xff999999),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               }),

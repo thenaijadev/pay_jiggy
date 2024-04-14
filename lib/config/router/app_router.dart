@@ -17,6 +17,7 @@ import 'package:pay_jiggy/features/auth/presentation/screens/sign_up_screen.dart
 import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/notification/presentation/screens/notification_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
+import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_screen.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
@@ -84,6 +85,10 @@ class AppRouter {
       case Routes.notification:
         return MaterialPageRoute(
           builder: (_) => const NotificationScreen(),
+        );
+      case Routes.editProfile:
+        return MaterialPageRoute(
+          builder: (_) => const EditProfileScreen(),
         );
       default:
         return MaterialPageRoute(

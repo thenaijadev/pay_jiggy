@@ -4,7 +4,7 @@ import 'package:pay_jiggy/core/widgets/text_widget.dart';
 
 class ActionButtonOrange extends StatelessWidget {
   const ActionButtonOrange(
-      {super.key, required this.onTap, required this.label});
+      {super.key, required this.onTap, this.label = "Order"});
   final VoidCallback onTap;
   final String label;
   @override
@@ -14,8 +14,8 @@ class ActionButtonOrange extends StatelessWidget {
       style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.orange,
           minimumSize: const Size(double.infinity, 50)),
-      child: const TextWidget(
-        text: "Order",
+      child: TextWidget(
+        text: label,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),

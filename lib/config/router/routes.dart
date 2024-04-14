@@ -19,4 +19,5 @@ class Routes {
 //Home
   static const String home = '/home';
   static const String notification = '/notification';
+  static const String editProfile = '/editProfile';
 }
