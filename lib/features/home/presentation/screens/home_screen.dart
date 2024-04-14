@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
-import 'package:pay_jiggy/core/widgets/text_widget.dart';
+import 'package:pay_jiggy/features/home/presentation/widgets/bottom_nav_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
+import 'package:pay_jiggy/features/home/presentation/widgets/menu_list_tile.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/wallet_tab.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/profile_tab.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/services_tab.dart';
@@ -91,49 +91,10 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: List.generate(drawerItems.length, (index) {
                 final item = drawerItems[index];
-                return GestureDetector(
-                  onTap: drawerItems[index]["onTap"],
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 17, horizontal: 12),
-                    height: 72,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Colors.white,
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            CircleAvatar(
-                              backgroundColor:
-                                  const Color.fromARGB(95, 255, 165, 54),
-                              child: Image.asset(
-                                item["icon"],
-                                width: 13,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 20,
-                            ),
-                            TextWidget(text: item["label"])
-                          ],
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.only(right: 15.0),
-                          child: Icon(
-                            CupertinoIcons.forward,
-                            color: Color(0xff999999),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
+                return MenuListTile(
+                    drawerItems: drawerItems,
+                    item: item,
+                    onTap: drawerItems[index]["onTap"]);
               }),
             ),
           ),
@@ -141,63 +102,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       backgroundColor: Colors.white,
       body: tabs[selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        type: BottomNavigationBarType.fixed, // Ensures 5 icons fit
-        items: <BottomNavigationBarItem>[
-          // BottomNavigationBarItem(
-          //   icon: GestureDetector(
-          //     onTap: () {
-          //       setState(() {
-          //         _scaffoldKey.currentState?.openDrawer();
-          //       });
-          //     },
-          //     child: Image.asset(
-          //       "assets/images/menu.png",
-          //       width: 30,
-          //       color: selectedIndex == 0 ? AppColors.orange : null,
-          //     ),
-          //   ),
-          //   label: 'Menu',
-          // ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/home.png",
-              width: 30,
-              color: selectedIndex == 0 ? AppColors.orange : null,
-            ),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            // This is the middle one (index 2)
-            icon: Image.asset(
-              "assets/images/services.png",
-              width: 30,
-              color: selectedIndex == 1 ? AppColors.orange : null,
-            ), // Make the middle icon slightly larger
-            label: 'Services',
-          ),
-
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/wallet.png",
-              width: 30,
-              color: selectedIndex == 2 ? AppColors.orange : null,
-            ),
-            label: 'Wallet',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/profile_tab_icon.png",
-              width: 30,
-              color: selectedIndex == 3 ? AppColors.orange : null,
-            ),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: selectedIndex,
-        selectedItemColor: AppColors.orange, // Color for selected item
-        onTap: onItemTapped,
+      bottomNavigationBar: BottomNavWidget(
+        selectedIndex: selectedIndex,
+        onItemTapped: onItemTapped,
       ),
     );
   }
