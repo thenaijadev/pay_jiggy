@@ -8,7 +8,7 @@ import 'package:pay_jiggy/features/services/presentation/widgets/services_grid.d
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key, required this.onMenuTap});
-  final VoidCallback onMenuTap;
+  final Function() onMenuTap;
 
   @override
   State<HomeTab> createState() => _HomeTabState();

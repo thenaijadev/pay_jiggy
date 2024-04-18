@@ -12,8 +12,12 @@ import 'package:pay_jiggy/features/auth/presentation/screens/forgot_password_scr
 import 'package:pay_jiggy/features/auth/presentation/screens/login_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/otp_verification_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/phone_number_screen.dart';
+import 'package:pay_jiggy/features/auth/presentation/screens/security_settings_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/set_password_screen.dart';
 import 'package:pay_jiggy/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:pay_jiggy/features/contact_privacy_help_support/presentation/screens/contact_us.dart';
+import 'package:pay_jiggy/features/contact_privacy_help_support/presentation/screens/help_and_support.dart';
+import 'package:pay_jiggy/features/contact_privacy_help_support/presentation/screens/privacy_policy.dart';
 import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/notification/presentation/screens/notification_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
@@ -89,6 +93,22 @@ class AppRouter {
       case Routes.editProfile:
         return MaterialPageRoute(
           builder: (_) => const EditProfileScreen(),
+        );
+      case Routes.securitySetting:
+        return MaterialPageRoute(
+          builder: (_) => const SecuritySettingsScreen(),
+        );
+      case Routes.privacyPolicy:
+        return MaterialPageRoute(
+          builder: (_) => const PrivacyPolicyScreen(),
+        );
+      case Routes.helpAndSupport:
+        return MaterialPageRoute(
+          builder: (_) => const HelpAndSupportScreen(),
+        );
+      case Routes.contactUs:
+        return MaterialPageRoute(
+          builder: (_) => const ContactUsScreen(),
         );
       default:
         return MaterialPageRoute(

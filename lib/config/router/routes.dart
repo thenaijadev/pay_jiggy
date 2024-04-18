@@ -15,9 +15,15 @@ class Routes {
       '/forgotPasswordOtpVerification';
   static const String forgotPasswordPhoneNumber = '/forgotPasswordPhoneNumber';
   static const String changePassword = '/changePassword';
+  static const String securitySetting = '/securitySetting';
 
 //Home
   static const String home = '/home';
   static const String notification = '/notification';
+
+  //Menu
   static const String editProfile = '/editProfile';
+  static const String privacyPolicy = '/privacyPolicyScreen';
+  static const String helpAndSupport = '/helpAndSupport';
+  static const String contactUs = '/contactUs';
 }

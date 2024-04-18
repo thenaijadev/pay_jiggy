@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
+import 'package:pay_jiggy/core/widgets/text_widget.dart';
+import 'package:pay_jiggy/features/home/presentation/widgets/action_button.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/bottom_nav_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/menu_list_tile.dart';
@@ -16,8 +18,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedIndex = 0; // Set the middle index as default
+  int selectedIndex = 0;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     void onItemTapped(int index) {
@@ -44,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       const ProfileTab()
     ];
+
     final List<Map<String, dynamic>> drawerItems = [
       {
         "onTap": () {
@@ -53,27 +57,117 @@ class _HomeScreenState extends State<HomeScreen> {
         "icon": "assets/images/profile_img.png"
       },
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.securitySetting);
+        },
         "label": "Security settings",
         "icon": "assets/images/security_img.png"
       },
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.privacyPolicy);
+        },
         "label": "Privacy Policy",
         "icon": "assets/images/privacy_img.png"
       },
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.helpAndSupport);
+        },
         "label": "Help & Support",
         "icon": "assets/images/help_img.png"
       },
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.contactUs);
+        },
         "label": "Contact Us",
         "icon": "assets/images/contact_img.png"
       },
-      {"onTap": () {}, "label": "Logout", "icon": "assets/images/logout.png"},
+      {
+        "onTap": () {
+          showDialog(
+              context: context,
+              builder: (context) {
+                return AlertDialog(
+                  contentPadding: const EdgeInsets.all(0),
+                  backgroundColor: Colors.white,
+                  content: Stack(
+                    clipBehavior: Clip.none,
+                    alignment: AlignmentDirectional.topEnd,
+                    children: [
+                      Container(
+                        height: 494,
+                        width: 327,
+                        padding: const EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 30)
+                            .copyWith(top: 140),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            GestureDetector(
+                              onTap: () => Navigator.pop(context),
+                              child: CircleAvatar(
+                                radius: 50,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    left: 5.0,
+                                  ),
+                                  child: Image.asset(
+                                    "assets/images/logout_popup.png",
+                                    width: 40,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 60,
+                            ),
+                            const TextWidget(
+                              text: "Want to logout ?",
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const TextWidget(
+                              textAlign: TextAlign.center,
+                              text:
+                                  "You will back to early app if you click the logout button",
+                              color: Color(0xff999999),
+                            ),
+                            const Spacer(),
+                            ActionButtonOrange(
+                              onTap: () {},
+                              label: "Logout",
+                            )
+                          ],
+                        ),
+                      ),
+                      const Positioned(
+                        right: -15,
+                        top: -10,
+                        child: CircleAvatar(
+                          backgroundColor: Colors.black,
+                          child: Icon(Icons.close),
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              });
+        },
+        "label": "Logout",
+        "icon": "assets/images/logout.png"
+      },
     ];
+
     return Scaffold(
       key: _scaffoldKey,
       drawer: Padding(
@@ -89,13 +183,16 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Padding(
             padding: const EdgeInsets.only(top: 20.0),
             child: Column(
-              children: List.generate(drawerItems.length, (index) {
-                final item = drawerItems[index];
-                return MenuListTile(
-                    drawerItems: drawerItems,
+              children: List.generate(
+                drawerItems.length,
+                (index) {
+                  final item = drawerItems[index];
+                  return MenuListTile(
                     item: item,
-                    onTap: drawerItems[index]["onTap"]);
-              }),
+                    onTap: drawerItems[index]["onTap"],
+                  );
+                },
+              ),
             ),
           ),
         ),
