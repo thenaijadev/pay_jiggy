@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/features/services/presentation/widgets/service_grid_item.dart';
 
 class ServicesGrid extends StatelessWidget {
@@ -7,7 +8,13 @@ class ServicesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> services = [
-      {"onTap": () {}, "label": "Data", "icon": Icons.wifi},
+      {
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.mobileData);
+        },
+        "label": "Data",
+        "icon": Icons.wifi
+      },
       {"onTap": () {}, "label": "Airtime", "icon": Icons.phone},
       {
         "onTap": () {},
@@ -39,7 +46,9 @@ class ServicesGrid extends StatelessWidget {
         crossAxisCount: 4, // Two items per row
         children: List.generate(services.length, (index) {
           return ServiceGridItem(
-              icon: services[index]["icon"], label: services[index]["label"]);
+              onTap: services[index]["onTap"],
+              icon: services[index]["icon"],
+              label: services[index]["label"]);
         }),
       ),
     );

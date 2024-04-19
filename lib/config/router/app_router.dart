@@ -22,6 +22,8 @@ import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/notification/presentation/screens/notification_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_mobile_data_transaction.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
@@ -109,6 +111,15 @@ class AppRouter {
       case Routes.contactUs:
         return MaterialPageRoute(
           builder: (_) => const ContactUsScreen(),
+        );
+
+      case Routes.mobileData:
+        return MaterialPageRoute(
+          builder: (_) => const MobileDataScreen(),
+        );
+      case Routes.dataTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const PreviewDataTransactionScreen(),
         );
       default:
         return MaterialPageRoute(

@@ -26,4 +26,8 @@ class Routes {
   static const String privacyPolicy = '/privacyPolicyScreen';
   static const String helpAndSupport = '/helpAndSupport';
   static const String contactUs = '/contactUs';
+
+  //Services
+  static const String mobileData = '/mobileData';
+  static const String dataTransactionReview = '/dataTransactionReview';
 }
