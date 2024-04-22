@@ -4,9 +4,11 @@ class HorizontalDivider extends StatelessWidget {
   final double thickness;
   final Color color;
   final double paddingVertical;
+  final double? width;
   const HorizontalDivider(
       {super.key,
       this.thickness = 1,
+      this.width,
       this.color = Colors.grey,
       this.paddingVertical = 40});
 

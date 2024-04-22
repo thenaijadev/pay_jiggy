@@ -121,6 +121,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const PreviewDataTransactionScreen(),
         );
+
       default:
         return MaterialPageRoute(
           builder: (_) => const ErrorScreen(),
