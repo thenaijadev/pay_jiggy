@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
-import 'package:pay_jiggy/core/widgets/text_widget.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/action_button.dart';
+
 import 'package:pay_jiggy/features/home/presentation/widgets/bottom_nav_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/home_tab.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/logout_popup_widget.dart';

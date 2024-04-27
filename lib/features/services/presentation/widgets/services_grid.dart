@@ -17,7 +17,9 @@ class ServicesGrid extends StatelessWidget {
       },
       {"onTap": () {}, "label": "Airtime", "icon": Icons.phone},
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.bookFlight);
+        },
         "label": "Book Flight",
         "icon": Icons.airplanemode_active_outlined
       },

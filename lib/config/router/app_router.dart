@@ -22,6 +22,7 @@ import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/notification/presentation/screens/notification_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_mobile_data_transaction.dart';
 
@@ -120,6 +121,10 @@ class AppRouter {
       case Routes.dataTransactionReview:
         return MaterialPageRoute(
           builder: (_) => const PreviewDataTransactionScreen(),
+        );
+      case Routes.bookFlight:
+        return MaterialPageRoute(
+          builder: (_) => const BookFlightScreen(),
         );
 
       default:
