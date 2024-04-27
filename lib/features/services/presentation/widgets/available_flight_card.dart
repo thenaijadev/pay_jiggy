@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
-import 'package:pay_jiggy/features/home/presentation/widgets/horizontal_divider.dart';
 
 class AvailableFlightCard extends StatelessWidget {
   const AvailableFlightCard({
@@ -27,6 +26,9 @@ class AvailableFlightCard extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: Column(
           children: [
+            const SizedBox(
+              height: 23,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,9 +37,7 @@ class AvailableFlightCard extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
-                const HorizontalDivider(
-                  width: 10,
-                ),
+                Image.asset("assets/images/line.png"),
                 CircleAvatar(
                   radius: 14,
                   backgroundColor: AppColors.orange,
@@ -50,6 +50,7 @@ class AvailableFlightCard extends StatelessWidget {
                     ),
                   ),
                 ),
+                Image.asset("assets/images/line.png"),
                 TextWidget(
                   text: to,
                   fontWeight: FontWeight.bold,
