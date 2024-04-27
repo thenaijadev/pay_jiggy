@@ -31,4 +31,5 @@ class Routes {
   static const String mobileData = '/mobileData';
   static const String dataTransactionReview = '/dataTransactionReview';
   static const String bookFlight = '/bookFlight';
+  static const String ticket = '/ticket';
 }

@@ -25,6 +25,7 @@ import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_scr
 import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_mobile_data_transaction.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/ticket_screen.dart';
 
 class AppRouter {
   Route onGenerateRoute(RouteSettings routeSettings) {
@@ -125,6 +126,10 @@ class AppRouter {
       case Routes.bookFlight:
         return MaterialPageRoute(
           builder: (_) => const BookFlightScreen(),
+        );
+      case Routes.ticket:
+        return MaterialPageRoute(
+          builder: (_) => const Ticket(),
         );
 
       default:

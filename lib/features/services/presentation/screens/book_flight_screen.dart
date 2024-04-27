@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:pay_jiggy/config/router/routes.dart';
 import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/core/validator/validator.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
@@ -178,12 +180,17 @@ class _BookFlightScreenState extends State<BookFlightScreen> {
                     ),
                   ],
                 ),
-                const AvailableFlightCard(
-                  from: 'ABJ',
-                  to: 'PH',
-                  amount: '#150, 000',
-                  startTime: '11:30',
-                  stopTime: '12:10',
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, Routes.ticket);
+                  },
+                  child: const AvailableFlightCard(
+                    from: 'ABJ',
+                    to: 'PH',
+                    amount: '#150, 000',
+                    startTime: '11:30',
+                    stopTime: '12:10',
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
