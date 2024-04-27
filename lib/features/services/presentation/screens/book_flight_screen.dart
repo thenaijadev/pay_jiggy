@@ -40,7 +40,7 @@ class _BookFlightScreenState extends State<BookFlightScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: const TextWidget(
-          text: "Mobile Data",
+          text: "Book Flight",
           fontWeight: FontWeight.bold,
           fontSize: 25,
         ),
@@ -195,6 +195,9 @@ class _BookFlightScreenState extends State<BookFlightScreen> {
                   startTime: '11:30',
                   stopTime: '12:10',
                 ),
+                const SizedBox(
+                  height: 20,
+                )
               ],
             ),
           ),

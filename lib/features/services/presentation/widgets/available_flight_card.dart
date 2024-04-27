@@ -94,7 +94,7 @@ class AvailableFlightCard extends StatelessWidget {
                   color: AppColors.orange,
                 ),
               ],
-            )
+            ),
           ],
         ),
       ),
