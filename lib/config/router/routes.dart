@@ -32,4 +32,8 @@ class Routes {
   static const String dataTransactionReview = '/dataTransactionReview';
   static const String bookFlight = '/bookFlight';
   static const String ticket = '/ticket';
+  static const String airtime = '/airtime';
+  static const String airtimeTransactionReview = '/airtimeTransactionReview';
+  static const String cableTv = '/cableTv';
+  static const String cableTvTransactionReview = '/cableTvTransactionReview';
 }

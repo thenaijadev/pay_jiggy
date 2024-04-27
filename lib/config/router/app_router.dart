@@ -22,8 +22,12 @@ import 'package:pay_jiggy/features/home/presentation/screens/home_screen.dart';
 import 'package:pay_jiggy/features/notification/presentation/screens/notification_screen.dart';
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/airtime_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/cable_tv_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_transaction.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_cable_tv.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_mobile_data_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/ticket_screen.dart';
 
@@ -131,7 +135,22 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const Ticket(),
         );
-
+      case Routes.airtime:
+        return MaterialPageRoute(
+          builder: (_) => const AirtimeScreen(),
+        );
+      case Routes.airtimeTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const PreviewAirtimeTransactionScreen(),
+        );
+      case Routes.cableTv:
+        return MaterialPageRoute(
+          builder: (_) => const CableTVScreen(),
+        );
+      case Routes.cableTvTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const CableTvTransactionScreen(),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => const ErrorScreen(),

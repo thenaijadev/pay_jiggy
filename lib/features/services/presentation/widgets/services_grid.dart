@@ -15,7 +15,13 @@ class ServicesGrid extends StatelessWidget {
         "label": "Data",
         "icon": Icons.wifi
       },
-      {"onTap": () {}, "label": "Airtime", "icon": Icons.phone},
+      {
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.airtime);
+        },
+        "label": "Airtime",
+        "icon": Icons.phone
+      },
       {
         "onTap": () {
           Navigator.pushNamed(context, Routes.bookFlight);
@@ -23,7 +29,13 @@ class ServicesGrid extends StatelessWidget {
         "label": "Book Flight",
         "icon": Icons.airplanemode_active_outlined
       },
-      {"onTap": () {}, "label": "Cable Tv", "icon": Icons.tv},
+      {
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.cableTv);
+        },
+        "label": "Cable Tv",
+        "icon": Icons.tv
+      },
       {"onTap": () {}, "label": "Electricity Bill", "icon": Icons.bolt},
       {"onTap": () {}, "label": "Gift Card", "icon": Icons.card_giftcard},
       {"onTap": () {}, "label": "Education", "icon": Icons.menu_book_outlined},
