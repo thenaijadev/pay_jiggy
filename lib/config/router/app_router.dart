@@ -23,11 +23,13 @@ import 'package:pay_jiggy/features/notification/presentation/screens/notificatio
 import 'package:pay_jiggy/features/onboarding/screens/onboarding_screen.dart';
 import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/airtime_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/airtime_to_cash_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/cable_tv_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/education_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/electricity_bill_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_to_cash_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_cable_tv.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_education_transaction.dart';
@@ -170,6 +172,14 @@ class AppRouter {
       case Routes.educationTransactionReview:
         return MaterialPageRoute(
           builder: (_) => const PreviewEducationTransactionScreen(),
+        );
+      case Routes.airtimeToCash:
+        return MaterialPageRoute(
+          builder: (_) => const AirtimeToCashScreen(),
+        );
+      case Routes.airtimeToCashTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const PreviewAirtimeToCashTransactionScreen(),
         );
       default:
         return MaterialPageRoute(

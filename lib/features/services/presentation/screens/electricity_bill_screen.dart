@@ -17,7 +17,7 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
   late GlobalKey<FormFieldState> meterNumberKey;
   late GlobalKey<FormFieldState> fromKey;
 
-  String? dropdownValue = 'Kaduna Electric (KAEDCO)';
+  String? dropdownValue = 'Enugu Electric (EEDC)';
 
   bool? amountIsValid;
   bool? meterNumberIsValid;
@@ -105,11 +105,10 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
                             });
                           },
                           items: <String>[
-                            'Kaduna Electric (KAEDCO)',
                             'Kano Electric (KEDCO)',
+                            'Enugu Electric (EEDC)',
                             'Ikeja Electric Payment (IKEDI)',
                             'Benin Electricity (BEDC)',
-                            'Enugu Electric (EEDC)',
                             'Eko Electric Payment (EEDC)',
                             'Port Harcourt Electric (PHED)',
                             'Ibadan Electricity Distribution Company (PHED)',

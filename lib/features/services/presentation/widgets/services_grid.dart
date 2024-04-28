@@ -54,7 +54,9 @@ class ServicesGrid extends StatelessWidget {
       {"onTap": () {}, "label": "Bulk SMS", "icon": Icons.message},
       {"onTap": () {}, "label": "Apple ID", "icon": Icons.apple},
       {
-        "onTap": () {},
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.airtimeToCash);
+        },
         "label": "Airtime to Cash",
         "icon": Icons.swap_horiz_outlined
       },

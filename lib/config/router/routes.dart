@@ -42,4 +42,7 @@ class Routes {
   static const String education = '/education';
   static const String educationTransactionReview =
       '/educationTransactionReview';
+  static const String airtimeToCash = '/airtimeToCash';
+  static const String airtimeToCashTransactionReview =
+      '/airtimeToCashTransactionReview';
 }
