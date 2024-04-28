@@ -47,10 +47,10 @@ class _MobileDataScreenState extends State<MobileDataScreen> {
     List<Map<String, dynamic>> serviceProviders = [
       {
         "image": "assets/images/nine_mobile.png",
-        "serviceProvider": ServiceProviders.mtn,
+        "serviceProvider": ServiceProviders.ninemobile,
         "onTap": () {
           setState(() {
-            choosenService = ServiceProviders.mtn;
+            choosenService = ServiceProviders.ninemobile;
             logger.e(choosenService);
           });
         }
@@ -66,19 +66,19 @@ class _MobileDataScreenState extends State<MobileDataScreen> {
       },
       {
         "image": "assets/images/mtn.png",
-        "serviceProvider": ServiceProviders.glo,
+        "serviceProvider": ServiceProviders.mtn,
         "onTap": () {
           setState(() {
-            choosenService = ServiceProviders.glo;
+            choosenService = ServiceProviders.mtn;
           });
         }
       },
       {
         "image": "assets/images/glo.png",
-        "serviceProvider": ServiceProviders.ninemobile,
+        "serviceProvider": ServiceProviders.glo,
         "onTap": () {
           setState(() {
-            choosenService = ServiceProviders.ninemobile;
+            choosenService = ServiceProviders.glo;
           });
         }
       },

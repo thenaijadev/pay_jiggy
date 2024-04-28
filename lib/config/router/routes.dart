@@ -36,4 +36,5 @@ class Routes {
   static const String airtimeTransactionReview = '/airtimeTransactionReview';
   static const String cableTv = '/cableTv';
   static const String cableTvTransactionReview = '/cableTvTransactionReview';
+  static const String electricityBill = '/electricityBill';
 }

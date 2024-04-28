@@ -1,89 +1,41 @@
 import 'package:flutter/material.dart';
-import 'package:pay_jiggy/app/enums.dart';
 import 'package:pay_jiggy/config/router/routes.dart';
-import 'package:pay_jiggy/core/utils/logger.dart';
 import 'package:pay_jiggy/core/validator/validator.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/auth/presentation/widgets/input_field_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/action_button.dart';
-import 'package:pay_jiggy/features/services/presentation/widgets/satellite_platforms.dart';
 
-class CableTVScreen extends StatefulWidget {
-  const CableTVScreen({super.key});
+class ElectricityBillScreen extends StatefulWidget {
+  const ElectricityBillScreen({super.key});
 
   @override
-  State<CableTVScreen> createState() => _CableTVScreenState();
+  State<ElectricityBillScreen> createState() => _ElectricityBillScreenState();
 }
 
-class _CableTVScreenState extends State<CableTVScreen> {
+class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
   late GlobalKey<FormFieldState> amountKey;
-  late GlobalKey<FormFieldState> decoderNameKey;
+  late GlobalKey<FormFieldState> meterNumberKey;
   late GlobalKey<FormFieldState> fromKey;
-  late GlobalKey<FormFieldState> iucNumberKey;
 
-  String? dropdownValue = 'Dstv Padi [N2150 for 30 Days]';
+  String? dropdownValue = 'Kaduna Electric (KAEDCO)';
 
   bool? amountIsValid;
-  bool? decoderNameIsValid;
-  bool? iucNumberIsValid;
+  bool? meterNumberIsValid;
 
   @override
   void initState() {
     amountKey = GlobalKey<FormFieldState>();
-    decoderNameKey = GlobalKey<FormFieldState>();
-    iucNumberKey = GlobalKey<FormFieldState>();
+    meterNumberKey = GlobalKey<FormFieldState>();
 
     super.initState();
   }
 
-  SatellitePlatforms choosenPlatform = SatellitePlatforms.dstv;
-
   @override
   Widget build(BuildContext context) {
-    List<Map<String, dynamic>> satellitePlatforms = [
-      {
-        "image": "assets/images/dstv.png",
-        "satellitePlatform": SatellitePlatforms.dstv,
-        "onTap": () {
-          setState(() {
-            choosenPlatform = SatellitePlatforms.dstv;
-            logger.e(choosenPlatform);
-          });
-        }
-      },
-      {
-        "image": "assets/images/gotv.png",
-        "satellitePlatform": SatellitePlatforms.gotv,
-        "onTap": () {
-          setState(() {
-            choosenPlatform = SatellitePlatforms.gotv;
-          });
-        }
-      },
-      {
-        "image": "assets/images/starTimes.png",
-        "satellitePlatform": SatellitePlatforms.startimes,
-        "onTap": () {
-          setState(() {
-            choosenPlatform = SatellitePlatforms.startimes;
-          });
-        }
-      },
-      {
-        "image": "assets/images/showmax.png",
-        "satellitePlatform": SatellitePlatforms.showmax,
-        "onTap": () {
-          setState(() {
-            choosenPlatform = SatellitePlatforms.showmax;
-          });
-        }
-      },
-    ];
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const TextWidget(
-          text: "Cable TV",
+          text: 'Electricity',
           fontWeight: FontWeight.bold,
           fontSize: 25,
         ),
@@ -91,84 +43,40 @@ class _CableTVScreenState extends State<CableTVScreen> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 30,
-                ),
-                const TextWidget(
-                  textAlign: TextAlign.right,
-                  text: "Select Service Povider",
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
+                Center(
+                  child: Image.asset('assets/images/electricity_companies.png'),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: List.generate(
-                    satellitePlatforms.length,
-                    (index) => SatellitePlatform(
-                      choosenPlatform: choosenPlatform,
-                      image: satellitePlatforms[index]["image"],
-                      onTap: satellitePlatforms[index]["onTap"],
-                      platform: satellitePlatforms[index]["satellitePlatform"],
-                    ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
                 InputFieldWidget(
-                    label: "Decoder IUC Number",
+                    label: "Meter Number",
                     labelFontSize: 12,
                     hintColor: const Color(0xff87898E),
-                    hintText: "IUC Number",
+                    hintText: "Meter Number",
                     verticalContentPadding: 5,
                     enabledBorderRadius: 10,
                     onChanged: (val) {
                       setState(() {
-                        iucNumberIsValid =
-                            iucNumberKey.currentState?.validate();
+                        meterNumberIsValid =
+                            meterNumberKey.currentState?.validate();
                       });
                     },
                     validator: (p0) {
                       final emailState = Validator.validateText(
-                          iucNumberKey.currentState?.value,
-                          "Decoder IUC Number");
+                          meterNumberKey.currentState?.value, "Meter Number");
                       return emailState;
                     },
-                    textFieldkey: iucNumberKey),
-                const SizedBox(
-                  height: 30,
-                ),
-                InputFieldWidget(
-                    label: "Decoder Name",
-                    labelFontSize: 12,
-                    hintColor: const Color(0xff87898E),
-                    hintText: "",
-                    verticalContentPadding: 5,
-                    enabledBorderRadius: 10,
-                    onChanged: (val) {
-                      setState(() {
-                        decoderNameIsValid =
-                            decoderNameKey.currentState?.validate();
-                      });
-                    },
-                    validator: (p0) {
-                      final emailState = Validator.validateText(
-                          decoderNameKey.currentState?.value, "Decoder Name");
-                      return emailState;
-                    },
-                    textFieldkey: decoderNameKey),
+                    textFieldkey: meterNumberKey),
                 const SizedBox(
                   height: 30,
                 ),
                 const TextWidget(
-                  text: "Service Plans",
+                  text: "Service Provider",
                   fontWeight: FontWeight.bold,
                   fontSize: 12,
                 ),
@@ -197,13 +105,17 @@ class _CableTVScreenState extends State<CableTVScreen> {
                             });
                           },
                           items: <String>[
-                            'Dstv Padi [N2150 for 30 Days]',
-                            'Dstv Yanga [N2950 for 30 Days]',
-                            'Dstv Confam [N5300 for 30 Days] ',
-                            'Dstv Compact [N9000 for 30 Days] ',
-                            'Dstv Compact Plus [N14250 for 30 Days] ',
-                            'Dstv Premium [N21000 for 30 Days]',
-                            'Dstv Premium Asia [N23500 for 30 Days] ',
+                            'Kaduna Electric (KAEDCO)',
+                            'Kano Electric (KEDCO)',
+                            'Ikeja Electric Payment (IKEDI)',
+                            'Benin Electricity (BEDC)',
+                            'Enugu Electric (EEDC)',
+                            'Eko Electric Payment (EEDC)',
+                            'Port Harcourt Electric (PHED)',
+                            'Ibadan Electricity Distribution Company (PHED)',
+                            'Jos Electric (JED)',
+                            'Abuja Electric Distribution Company (AEDC)',
+                            'Yola Electric (YEDC)',
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,

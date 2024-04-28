@@ -25,6 +25,7 @@ import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_scr
 import 'package:pay_jiggy/features/services/presentation/screens/airtime_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/cable_tv_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/electricity_bill_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_cable_tv.dart';
@@ -150,6 +151,10 @@ class AppRouter {
       case Routes.cableTvTransactionReview:
         return MaterialPageRoute(
           builder: (_) => const CableTvTransactionScreen(),
+        );
+      case Routes.electricityBill:
+        return MaterialPageRoute(
+          builder: (_) => const ElectricityBillScreen(),
         );
       default:
         return MaterialPageRoute(
