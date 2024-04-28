@@ -37,4 +37,9 @@ class Routes {
   static const String cableTv = '/cableTv';
   static const String cableTvTransactionReview = '/cableTvTransactionReview';
   static const String electricityBill = '/electricityBill';
+  static const String eletricityBillTransactionReview =
+      '/eletricityBillTransactionReview';
+  static const String education = '/education';
+  static const String educationTransactionReview =
+      '/educationTransactionReview';
 }

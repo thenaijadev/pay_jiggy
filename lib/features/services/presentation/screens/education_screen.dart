@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:pay_jiggy/config/router/routes.dart';
+import 'package:pay_jiggy/core/constants/app_colors.dart';
 import 'package:pay_jiggy/core/validator/validator.dart';
 import 'package:pay_jiggy/core/widgets/text_widget.dart';
 import 'package:pay_jiggy/features/auth/presentation/widgets/input_field_widget.dart';
 import 'package:pay_jiggy/features/home/presentation/widgets/action_button.dart';
 
-class ElectricityBillScreen extends StatefulWidget {
-  const ElectricityBillScreen({super.key});
+class EducationScreen extends StatefulWidget {
+  const EducationScreen({super.key});
 
   @override
-  State<ElectricityBillScreen> createState() => _ElectricityBillScreenState();
+  State<EducationScreen> createState() => _EducationScreenState();
 }
 
-class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
+class _EducationScreenState extends State<EducationScreen> {
+  int _quantity = 2;
+
   late GlobalKey<FormFieldState> amountKey;
   late GlobalKey<FormFieldState> meterNumberKey;
   late GlobalKey<FormFieldState> fromKey;
 
-  String? dropdownValue = 'Kaduna Electric (KAEDCO)';
+  String? dropdownValue = 'Joint Admission and Matriculation Board (JAMB)';
 
   bool? amountIsValid;
   bool? meterNumberIsValid;
@@ -30,12 +33,26 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
     super.initState();
   }
 
+  void _incrementQuantity() {
+    setState(() {
+      _quantity++;
+    });
+  }
+
+  void _decrementQuantity() {
+    setState(() {
+      if (_quantity > 0) {
+        _quantity--;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const TextWidget(
-          text: 'Electricity',
+          text: 'Education',
           fontWeight: FontWeight.bold,
           fontSize: 25,
         ),
@@ -48,35 +65,13 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: Image.asset('assets/images/electricity_companies.png'),
+                  child: Image.asset('assets/images/education.png'),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                InputFieldWidget(
-                    label: "Meter Number",
-                    labelFontSize: 12,
-                    hintColor: const Color(0xff87898E),
-                    hintText: "Meter Number",
-                    verticalContentPadding: 5,
-                    enabledBorderRadius: 10,
-                    onChanged: (val) {
-                      setState(() {
-                        meterNumberIsValid =
-                            meterNumberKey.currentState?.validate();
-                      });
-                    },
-                    validator: (p0) {
-                      final emailState = Validator.validateText(
-                          meterNumberKey.currentState?.value, "Meter Number");
-                      return emailState;
-                    },
-                    textFieldkey: meterNumberKey),
-                const SizedBox(
-                  height: 30,
-                ),
                 const TextWidget(
-                  text: "Service Provider",
+                  text: "Exam Type",
                   fontWeight: FontWeight.bold,
                   fontSize: 12,
                 ),
@@ -105,17 +100,10 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
                             });
                           },
                           items: <String>[
-                            'Kaduna Electric (KAEDCO)',
-                            'Kano Electric (KEDCO)',
-                            'Ikeja Electric Payment (IKEDI)',
-                            'Benin Electricity (BEDC)',
-                            'Enugu Electric (EEDC)',
-                            'Eko Electric Payment (EEDC)',
-                            'Port Harcourt Electric (PHED)',
-                            'Ibadan Electricity Distribution Company (PHED)',
-                            'Jos Electric (JED)',
-                            'Abuja Electric Distribution Company (AEDC)',
-                            'Yola Electric (YEDC)',
+                            'Joint Admission and Matriculation Board (JAMB)',
+                            'West African Examination Council (WAEC)',
+                            'National Examination Council (NECO)',
+                            'National Business and Technical Examinations Board (NABTEB)',
                           ].map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
@@ -132,11 +120,45 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
                 const SizedBox(
                   height: 30,
                 ),
+                const TextWidget(
+                  text: "Quantity",
+                  fontWeight: FontWeight.bold,
+                  fontSize: 12,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 46,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        color: const Color(0xff87898E),
+                      )),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        icon: const Icon(Icons.remove),
+                        onPressed: _decrementQuantity,
+                        color: AppColors.orange,
+                      ),
+                      Text('$_quantity'),
+                      IconButton(
+                        icon: const Icon(Icons.add),
+                        onPressed: _incrementQuantity,
+                        color: AppColors.orange,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 30),
                 InputFieldWidget(
                     label: "Amount",
                     labelFontSize: 12,
                     hintColor: const Color(0xff87898E),
-                    hintText: "120",
+                    hintText: "2000",
                     verticalContentPadding: 5,
                     enabledBorderRadius: 10,
                     onChanged: (val) {
@@ -156,7 +178,7 @@ class _ElectricityBillScreenState extends State<ElectricityBillScreen> {
                 ActionButtonOrange(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, Routes.eletricityBillTransactionReview);
+                        context, Routes.educationTransactionReview);
                   },
                   label: "Proceed",
                 ),

@@ -25,10 +25,13 @@ import 'package:pay_jiggy/features/profile/presentation/screens/edit_profile_scr
 import 'package:pay_jiggy/features/services/presentation/screens/airtime_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/book_flight_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/cable_tv_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/education_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/electricity_bill_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_cable_tv.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_education_transaction.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/preview_electricity_bill.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_mobile_data_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/ticket_screen.dart';
 
@@ -155,6 +158,18 @@ class AppRouter {
       case Routes.electricityBill:
         return MaterialPageRoute(
           builder: (_) => const ElectricityBillScreen(),
+        );
+      case Routes.eletricityBillTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const PreviewElectricityBillTransactionScreen(),
+        );
+      case Routes.education:
+        return MaterialPageRoute(
+          builder: (_) => const EducationScreen(),
+        );
+      case Routes.educationTransactionReview:
+        return MaterialPageRoute(
+          builder: (_) => const PreviewEducationTransactionScreen(),
         );
       default:
         return MaterialPageRoute(

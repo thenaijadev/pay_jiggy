@@ -44,7 +44,13 @@ class ServicesGrid extends StatelessWidget {
         "icon": Icons.bolt
       },
       {"onTap": () {}, "label": "Gift Card", "icon": Icons.card_giftcard},
-      {"onTap": () {}, "label": "Education", "icon": Icons.menu_book_outlined},
+      {
+        "onTap": () {
+          Navigator.pushNamed(context, Routes.education);
+        },
+        "label": "Education",
+        "icon": Icons.menu_book_outlined
+      },
       {"onTap": () {}, "label": "Bulk SMS", "icon": Icons.message},
       {"onTap": () {}, "label": "Apple ID", "icon": Icons.apple},
       {
