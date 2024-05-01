@@ -28,6 +28,7 @@ import 'package:pay_jiggy/features/services/presentation/screens/book_flight_scr
 import 'package:pay_jiggy/features/services/presentation/screens/cable_tv_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/education_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/electricity_bill_screen.dart';
+import 'package:pay_jiggy/features/services/presentation/screens/gift_card_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/mobile_data_screen.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_to_cash_transaction.dart';
 import 'package:pay_jiggy/features/services/presentation/screens/preview_airtime_transaction.dart';
@@ -180,6 +181,10 @@ class AppRouter {
       case Routes.airtimeToCashTransactionReview:
         return MaterialPageRoute(
           builder: (_) => const PreviewAirtimeToCashTransactionScreen(),
+        );
+      case Routes.giftCard:
+        return MaterialPageRoute(
+          builder: (_) => const GiftCardScreen(),
         );
       default:
         return MaterialPageRoute(

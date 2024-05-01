@@ -45,4 +45,5 @@ class Routes {
   static const String airtimeToCash = '/airtimeToCash';
   static const String airtimeToCashTransactionReview =
       '/airtimeToCashTransactionReview';
+  static const String giftCard = '/giftCard';
 }
